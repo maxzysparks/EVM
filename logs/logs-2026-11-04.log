@@ -1,0 +1,19 @@
+INFO: 2026-11-04 10:57:28,667 **********************************************************************************************************************
+INFO: 2026-11-04 10:57:28,667 YOUR BOT IS CURRENTLY RUNNING VERSION  1.0.1
+INFO: 2026-11-04 10:57:29,681 ERROR. Please go to /log folder and open your logs: you will find more details.
+ERROR: 2026-11-04 10:57:29,681 EOF when reading a line
+Traceback (most recent call last):
+  File "/workspace/artifacts/alpha-evm-dex-bot/AlphaBot.py", line 5374, in <module>
+    parse_wallet_settings(settings, userpassword)
+  File "/workspace/artifacts/alpha-evm-dex-bot/AlphaBot.py", line 2160, in parse_wallet_settings
+    settings['ALPHAWALLETADDRESS'] = input("Please provide the wallet address where you have your ALPHA : ")
+EOFError: EOF when reading a line
+ERROR: 2026-11-04 10:57:29,682 EOF when reading a line
+Traceback (most recent call last):
+  File "/workspace/artifacts/alpha-evm-dex-bot/AlphaBot.py", line 5374, in <module>
+    parse_wallet_settings(settings, userpassword)
+  File "/workspace/artifacts/alpha-evm-dex-bot/AlphaBot.py", line 2160, in parse_wallet_settings
+    settings['ALPHAWALLETADDRESS'] = input("Please provide the wallet address where you have your ALPHA : ")
+EOFError: EOF when reading a line
+INFO: 2026-11-04 21:39:14,210 **********************************************************************************************************************
+INFO: 2026-11-04 21:39:14,212 YOUR BOT IS CURRENTLY RUNNING VERSION  1.0.1

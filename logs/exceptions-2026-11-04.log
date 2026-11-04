@@ -1,0 +1,7 @@
+EOF when reading a line
+Traceback (most recent call last):
+  File "/workspace/artifacts/alpha-evm-dex-bot/AlphaBot.py", line 5374, in <module>
+    parse_wallet_settings(settings, userpassword)
+  File "/workspace/artifacts/alpha-evm-dex-bot/AlphaBot.py", line 2160, in parse_wallet_settings
+    settings['ALPHAWALLETADDRESS'] = input("Please provide the wallet address where you have your ALPHA : ")
+EOFError: EOF when reading a line
