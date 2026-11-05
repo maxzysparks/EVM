@@ -1,0 +1,1595 @@
+TypeError: isinstance() arg 2 must be a type, a tuple of types, or a union
+
+Parse tree:
+<Node matching "">  <-- *** We were here. ***
+Traceback (most recent call last):
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 213, in visit
+    return method(node, [self.visit(n) for n in node])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\eth_abi\grammar.py", line 99, in generic_visit
+    if isinstance(node.expr, expressions.Optional):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: isinstance() arg 2 must be a type, a tuple of types, or a union
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\AlphaBot.py", line 5377, in <module>
+    true_balance = auth()
+                   ^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\AlphaBot.py", line 2337, in auth
+    decimals = balanceContract.functions.decimals().call()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\contract.py", line 970, in call
+    return call_contract_function(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\contract.py", line 1564, in call_contract_function
+    return_data = web3.eth.call(
+                  ^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\module.py", line 53, in caller
+    (method_str, params), response_formatters = method.process_params(module, *args, **kwargs)  # noqa: E501
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\method.py", line 202, in process_params
+    _apply_request_formatters(params, self.request_formatters(method)))
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\eth_utils\functional.py", line 45, in inner
+    return callback(fn(*args, **kwargs))
+                    ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\method.py", line 52, in _apply_request_formatters
+    formatted_params = pipe(params, request_formatters)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "cytoolz\\functoolz.pyx", line 680, in cytoolz.functoolz.pipe
+  File "cytoolz\\functoolz.pyx", line 655, in cytoolz.functoolz.c_pipe
+  File "cytoolz\\functoolz.pyx", line 518, in cytoolz.functoolz.Compose.__call__
+  File "cytoolz\\functoolz.pyx", line 263, in cytoolz.functoolz.curry.__call__
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\eth_utils\decorators.py", line 91, in wrapper
+    return ReturnType(result)
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\eth_utils\applicators.py", line 22, in apply_formatter_at_index
+    yield formatter(item)
+          ^^^^^^^^^^^^^^^
+  File "cytoolz\\functoolz.pyx", line 263, in cytoolz.functoolz.curry.__call__
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\_utils\rpc_abi.py", line 224, in apply_abi_formatters_to_dict
+    formatted_values = map_abi_data(
+                       ^^^^^^^^^^^^^
+  File "cytoolz\\functoolz.pyx", line 263, in cytoolz.functoolz.curry.__call__
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\_utils\abi.py", line 811, in map_abi_data
+    return pipe(data, *pipeline)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "cytoolz\\functoolz.pyx", line 680, in cytoolz.functoolz.pipe
+  File "cytoolz\\functoolz.pyx", line 655, in cytoolz.functoolz.c_pipe
+  File "cytoolz\\functoolz.pyx", line 263, in cytoolz.functoolz.curry.__call__
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\_utils\abi.py", line 825, in abi_data_tree
+    return [
+           ^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\_utils\abi.py", line 826, in <listcomp>
+    abi_sub_tree(data_type, data_value)
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\_utils\abi.py", line 877, in abi_sub_tree
+    abi_type = parse(type_str_or_abi_type)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\eth_abi\grammar.py", line 123, in parse
+    return super().parse(type_str)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 252, in parse
+    return self._parse_or_match(text, pos, 'parse')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 287, in _parse_or_match
+    return self.visit(getattr(self.grammar, method_name)(text, pos=pos))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 213, in visit
+    return method(node, [self.visit(n) for n in node])
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 213, in <listcomp>
+    return method(node, [self.visit(n) for n in node])
+                         ^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 213, in visit
+    return method(node, [self.visit(n) for n in node])
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 213, in <listcomp>
+    return method(node, [self.visit(n) for n in node])
+                         ^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 225, in visit
+    raise VisitationError(exc, exc_class, node) from exc
+parsimonious.exceptions.VisitationError: TypeError: isinstance() arg 2 must be a type, a tuple of types, or a union
+
+Parse tree:
+<Node matching "">  <-- *** We were here. ***
+TypeError: isinstance() arg 2 must be a type, a tuple of types, or a union
+
+Parse tree:
+<Node matching "">  <-- *** We were here. ***
+Traceback (most recent call last):
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 213, in visit
+    return method(node, [self.visit(n) for n in node])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\eth_abi\grammar.py", line 99, in generic_visit
+    if isinstance(node.expr, expressions.Optional):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: isinstance() arg 2 must be a type, a tuple of types, or a union
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\AlphaBot.py", line 5377, in <module>
+    true_balance = auth()
+                   ^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\AlphaBot.py", line 2337, in auth
+    decimals = balanceContract.functions.decimals().call()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\contract.py", line 970, in call
+    return call_contract_function(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\contract.py", line 1564, in call_contract_function
+    return_data = web3.eth.call(
+                  ^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\module.py", line 53, in caller
+    (method_str, params), response_formatters = method.process_params(module, *args, **kwargs)  # noqa: E501
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\method.py", line 202, in process_params
+    _apply_request_formatters(params, self.request_formatters(method)))
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\eth_utils\functional.py", line 45, in inner
+    return callback(fn(*args, **kwargs))
+                    ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\method.py", line 52, in _apply_request_formatters
+    formatted_params = pipe(params, request_formatters)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "cytoolz\\functoolz.pyx", line 680, in cytoolz.functoolz.pipe
+  File "cytoolz\\functoolz.pyx", line 655, in cytoolz.functoolz.c_pipe
+  File "cytoolz\\functoolz.pyx", line 518, in cytoolz.functoolz.Compose.__call__
+  File "cytoolz\\functoolz.pyx", line 263, in cytoolz.functoolz.curry.__call__
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\eth_utils\decorators.py", line 91, in wrapper
+    return ReturnType(result)
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\eth_utils\applicators.py", line 22, in apply_formatter_at_index
+    yield formatter(item)
+          ^^^^^^^^^^^^^^^
+  File "cytoolz\\functoolz.pyx", line 263, in cytoolz.functoolz.curry.__call__
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\_utils\rpc_abi.py", line 224, in apply_abi_formatters_to_dict
+    formatted_values = map_abi_data(
+                       ^^^^^^^^^^^^^
+  File "cytoolz\\functoolz.pyx", line 263, in cytoolz.functoolz.curry.__call__
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\_utils\abi.py", line 811, in map_abi_data
+    return pipe(data, *pipeline)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "cytoolz\\functoolz.pyx", line 680, in cytoolz.functoolz.pipe
+  File "cytoolz\\functoolz.pyx", line 655, in cytoolz.functoolz.c_pipe
+  File "cytoolz\\functoolz.pyx", line 263, in cytoolz.functoolz.curry.__call__
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\_utils\abi.py", line 825, in abi_data_tree
+    return [
+           ^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\_utils\abi.py", line 826, in <listcomp>
+    abi_sub_tree(data_type, data_value)
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\_utils\abi.py", line 877, in abi_sub_tree
+    abi_type = parse(type_str_or_abi_type)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\eth_abi\grammar.py", line 123, in parse
+    return super().parse(type_str)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 252, in parse
+    return self._parse_or_match(text, pos, 'parse')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 287, in _parse_or_match
+    return self.visit(getattr(self.grammar, method_name)(text, pos=pos))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 213, in visit
+    return method(node, [self.visit(n) for n in node])
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 213, in <listcomp>
+    return method(node, [self.visit(n) for n in node])
+                         ^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 213, in visit
+    return method(node, [self.visit(n) for n in node])
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 213, in <listcomp>
+    return method(node, [self.visit(n) for n in node])
+                         ^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 225, in visit
+    raise VisitationError(exc, exc_class, node) from exc
+parsimonious.exceptions.VisitationError: TypeError: isinstance() arg 2 must be a type, a tuple of types, or a union
+
+Parse tree:
+<Node matching "">  <-- *** We were here. ***
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 213, in visit
+    return method(node, [self.visit(n) for n in node])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\eth_abi\grammar.py", line 99, in generic_visit
+    if isinstance(node.expr, expressions.Optional):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: isinstance() arg 2 must be a type, a tuple of types, or a union
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\AlphaBot.py", line 5345, in runLoop
+    run()
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\AlphaBot.py", line 4791, in run
+    tokens = load_tokens_file(command_line_args.tokens, True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\AlphaBot.py", line 662, in load_tokens_file
+    '_BASE_PRICE': calculate_base_price(),
+                   ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\cachetools\_cached.py", line 227, in wrapper
+    v = func(*args, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\AlphaBot.py", line 3065, in calculate_base_price
+    reserves = pair_contract.functions.getReserves().call()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\contract.py", line 970, in call
+    return call_contract_function(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\contract.py", line 1564, in call_contract_function
+    return_data = web3.eth.call(
+                  ^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\module.py", line 53, in caller
+    (method_str, params), response_formatters = method.process_params(module, *args, **kwargs)  # noqa: E501
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\method.py", line 202, in process_params
+    _apply_request_formatters(params, self.request_formatters(method)))
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\eth_utils\functional.py", line 45, in inner
+    return callback(fn(*args, **kwargs))
+                    ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\method.py", line 52, in _apply_request_formatters
+    formatted_params = pipe(params, request_formatters)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "cytoolz\\functoolz.pyx", line 680, in cytoolz.functoolz.pipe
+  File "cytoolz\\functoolz.pyx", line 655, in cytoolz.functoolz.c_pipe
+  File "cytoolz\\functoolz.pyx", line 518, in cytoolz.functoolz.Compose.__call__
+  File "cytoolz\\functoolz.pyx", line 263, in cytoolz.functoolz.curry.__call__
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\eth_utils\decorators.py", line 91, in wrapper
+    return ReturnType(result)
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\eth_utils\applicators.py", line 22, in apply_formatter_at_index
+    yield formatter(item)
+          ^^^^^^^^^^^^^^^
+  File "cytoolz\\functoolz.pyx", line 263, in cytoolz.functoolz.curry.__call__
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\_utils\rpc_abi.py", line 224, in apply_abi_formatters_to_dict
+    formatted_values = map_abi_data(
+                       ^^^^^^^^^^^^^
+  File "cytoolz\\functoolz.pyx", line 263, in cytoolz.functoolz.curry.__call__
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\_utils\abi.py", line 811, in map_abi_data
+    return pipe(data, *pipeline)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "cytoolz\\functoolz.pyx", line 680, in cytoolz.functoolz.pipe
+  File "cytoolz\\functoolz.pyx", line 655, in cytoolz.functoolz.c_pipe
+  File "cytoolz\\functoolz.pyx", line 263, in cytoolz.functoolz.curry.__call__
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\_utils\abi.py", line 825, in abi_data_tree
+    return [
+           ^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\_utils\abi.py", line 826, in <listcomp>
+    abi_sub_tree(data_type, data_value)
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\_utils\abi.py", line 877, in abi_sub_tree
+    abi_type = parse(type_str_or_abi_type)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\eth_abi\grammar.py", line 123, in parse
+    return super().parse(type_str)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 252, in parse
+    return self._parse_or_match(text, pos, 'parse')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 287, in _parse_or_match
+    return self.visit(getattr(self.grammar, method_name)(text, pos=pos))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 213, in visit
+    return method(node, [self.visit(n) for n in node])
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 213, in <listcomp>
+    return method(node, [self.visit(n) for n in node])
+                         ^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 213, in visit
+    return method(node, [self.visit(n) for n in node])
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 213, in <listcomp>
+    return method(node, [self.visit(n) for n in node])
+                         ^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 225, in visit
+    raise VisitationError(exc, exc_class, node) from exc
+parsimonious.exceptions.VisitationError: TypeError: isinstance() arg 2 must be a type, a tuple of types, or a union
+
+Parse tree:
+<Node matching "">  <-- *** We were here. ***
+'CAKE'
+Traceback (most recent call last):
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 213, in visit
+    return method(node, [self.visit(n) for n in node])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\eth_abi\grammar.py", line 99, in generic_visit
+    if isinstance(node.expr, expressions.Optional):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: isinstance() arg 2 must be a type, a tuple of types, or a union
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\AlphaBot.py", line 5377, in <module>
+    true_balance = auth()
+                   ^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\AlphaBot.py", line 2337, in auth
+    decimals = balanceContract.functions.decimals().call()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\contract.py", line 970, in call
+    return call_contract_function(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\contract.py", line 1564, in call_contract_function
+    return_data = web3.eth.call(
+                  ^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\module.py", line 53, in caller
+    (method_str, params), response_formatters = method.process_params(module, *args, **kwargs)  # noqa: E501
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\method.py", line 202, in process_params
+    _apply_request_formatters(params, self.request_formatters(method)))
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\eth_utils\functional.py", line 45, in inner
+    return callback(fn(*args, **kwargs))
+                    ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\method.py", line 52, in _apply_request_formatters
+    formatted_params = pipe(params, request_formatters)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "cytoolz\\functoolz.pyx", line 680, in cytoolz.functoolz.pipe
+  File "cytoolz\\functoolz.pyx", line 655, in cytoolz.functoolz.c_pipe
+  File "cytoolz\\functoolz.pyx", line 518, in cytoolz.functoolz.Compose.__call__
+  File "cytoolz\\functoolz.pyx", line 263, in cytoolz.functoolz.curry.__call__
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\eth_utils\decorators.py", line 91, in wrapper
+    return ReturnType(result)
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\eth_utils\applicators.py", line 22, in apply_formatter_at_index
+    yield formatter(item)
+          ^^^^^^^^^^^^^^^
+  File "cytoolz\\functoolz.pyx", line 263, in cytoolz.functoolz.curry.__call__
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\_utils\rpc_abi.py", line 224, in apply_abi_formatters_to_dict
+    formatted_values = map_abi_data(
+                       ^^^^^^^^^^^^^
+  File "cytoolz\\functoolz.pyx", line 263, in cytoolz.functoolz.curry.__call__
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\_utils\abi.py", line 811, in map_abi_data
+    return pipe(data, *pipeline)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "cytoolz\\functoolz.pyx", line 680, in cytoolz.functoolz.pipe
+  File "cytoolz\\functoolz.pyx", line 655, in cytoolz.functoolz.c_pipe
+  File "cytoolz\\functoolz.pyx", line 263, in cytoolz.functoolz.curry.__call__
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\_utils\abi.py", line 825, in abi_data_tree
+    return [
+           ^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\_utils\abi.py", line 826, in <listcomp>
+    abi_sub_tree(data_type, data_value)
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\_utils\abi.py", line 877, in abi_sub_tree
+    abi_type = parse(type_str_or_abi_type)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\eth_abi\grammar.py", line 123, in parse
+    return super().parse(type_str)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 252, in parse
+    return self._parse_or_match(text, pos, 'parse')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 287, in _parse_or_match
+    return self.visit(getattr(self.grammar, method_name)(text, pos=pos))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 213, in visit
+    return method(node, [self.visit(n) for n in node])
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 213, in <listcomp>
+    return method(node, [self.visit(n) for n in node])
+                         ^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 213, in visit
+    return method(node, [self.visit(n) for n in node])
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 213, in <listcomp>
+    return method(node, [self.visit(n) for n in node])
+                         ^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 225, in visit
+    raise VisitationError(exc, exc_class, node) from exc
+parsimonious.exceptions.VisitationError: TypeError: isinstance() arg 2 must be a type, a tuple of types, or a union
+
+Parse tree:
+<Node matching "">  <-- *** We were here. ***
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 213, in visit
+    return method(node, [self.visit(n) for n in node])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\eth_abi\grammar.py", line 99, in generic_visit
+    if isinstance(node.expr, expressions.Optional):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: isinstance() arg 2 must be a type, a tuple of types, or a union
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\AlphaBot.py", line 5345, in runLoop
+    run()
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\AlphaBot.py", line 4791, in run
+    tokens = load_tokens_file(command_line_args.tokens, True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\AlphaBot.py", line 662, in load_tokens_file
+    '_BASE_PRICE': calculate_base_price(),
+                   ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\cachetools\_cached.py", line 227, in wrapper
+    v = func(*args, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\AlphaBot.py", line 3065, in calculate_base_price
+    reserves = pair_contract.functions.getReserves().call()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\contract.py", line 970, in call
+    return call_contract_function(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\contract.py", line 1564, in call_contract_function
+    return_data = web3.eth.call(
+                  ^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\module.py", line 53, in caller
+    (method_str, params), response_formatters = method.process_params(module, *args, **kwargs)  # noqa: E501
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\method.py", line 202, in process_params
+    _apply_request_formatters(params, self.request_formatters(method)))
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\eth_utils\functional.py", line 45, in inner
+    return callback(fn(*args, **kwargs))
+                    ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\method.py", line 52, in _apply_request_formatters
+    formatted_params = pipe(params, request_formatters)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "cytoolz\\functoolz.pyx", line 680, in cytoolz.functoolz.pipe
+  File "cytoolz\\functoolz.pyx", line 655, in cytoolz.functoolz.c_pipe
+  File "cytoolz\\functoolz.pyx", line 518, in cytoolz.functoolz.Compose.__call__
+  File "cytoolz\\functoolz.pyx", line 263, in cytoolz.functoolz.curry.__call__
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\eth_utils\decorators.py", line 91, in wrapper
+    return ReturnType(result)
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\eth_utils\applicators.py", line 22, in apply_formatter_at_index
+    yield formatter(item)
+          ^^^^^^^^^^^^^^^
+  File "cytoolz\\functoolz.pyx", line 263, in cytoolz.functoolz.curry.__call__
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\_utils\rpc_abi.py", line 224, in apply_abi_formatters_to_dict
+    formatted_values = map_abi_data(
+                       ^^^^^^^^^^^^^
+  File "cytoolz\\functoolz.pyx", line 263, in cytoolz.functoolz.curry.__call__
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\_utils\abi.py", line 811, in map_abi_data
+    return pipe(data, *pipeline)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "cytoolz\\functoolz.pyx", line 680, in cytoolz.functoolz.pipe
+  File "cytoolz\\functoolz.pyx", line 655, in cytoolz.functoolz.c_pipe
+  File "cytoolz\\functoolz.pyx", line 263, in cytoolz.functoolz.curry.__call__
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\_utils\abi.py", line 825, in abi_data_tree
+    return [
+           ^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\_utils\abi.py", line 826, in <listcomp>
+    abi_sub_tree(data_type, data_value)
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\_utils\abi.py", line 877, in abi_sub_tree
+    abi_type = parse(type_str_or_abi_type)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\eth_abi\grammar.py", line 123, in parse
+    return super().parse(type_str)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 252, in parse
+    return self._parse_or_match(text, pos, 'parse')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 287, in _parse_or_match
+    return self.visit(getattr(self.grammar, method_name)(text, pos=pos))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 213, in visit
+    return method(node, [self.visit(n) for n in node])
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 213, in <listcomp>
+    return method(node, [self.visit(n) for n in node])
+                         ^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 213, in visit
+    return method(node, [self.visit(n) for n in node])
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 213, in <listcomp>
+    return method(node, [self.visit(n) for n in node])
+                         ^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 225, in visit
+    raise VisitationError(exc, exc_class, node) from exc
+parsimonious.exceptions.VisitationError: TypeError: isinstance() arg 2 must be a type, a tuple of types, or a union
+
+Parse tree:
+<Node matching "">  <-- *** We were here. ***
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\AlphaBot.py", line 5345, in runLoop
+    run()
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\AlphaBot.py", line 4793, in run
+    tokens = reload_tokens_file(command_line_args.tokens, True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\AlphaBot.py", line 929, in reload_tokens_file
+    '_LIQUIDITY_READY': _TOKENS_saved[token['SYMBOL']]['_LIQUIDITY_READY'],
+                        ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+KeyError: 'CAKE'
+'CAKE'
+Traceback (most recent call last):
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 213, in visit
+    return method(node, [self.visit(n) for n in node])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\eth_abi\grammar.py", line 99, in generic_visit
+    if isinstance(node.expr, expressions.Optional):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: isinstance() arg 2 must be a type, a tuple of types, or a union
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\AlphaBot.py", line 5377, in <module>
+    true_balance = auth()
+                   ^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\AlphaBot.py", line 2337, in auth
+    decimals = balanceContract.functions.decimals().call()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\contract.py", line 970, in call
+    return call_contract_function(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\contract.py", line 1564, in call_contract_function
+    return_data = web3.eth.call(
+                  ^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\module.py", line 53, in caller
+    (method_str, params), response_formatters = method.process_params(module, *args, **kwargs)  # noqa: E501
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\method.py", line 202, in process_params
+    _apply_request_formatters(params, self.request_formatters(method)))
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\eth_utils\functional.py", line 45, in inner
+    return callback(fn(*args, **kwargs))
+                    ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\method.py", line 52, in _apply_request_formatters
+    formatted_params = pipe(params, request_formatters)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "cytoolz\\functoolz.pyx", line 680, in cytoolz.functoolz.pipe
+  File "cytoolz\\functoolz.pyx", line 655, in cytoolz.functoolz.c_pipe
+  File "cytoolz\\functoolz.pyx", line 518, in cytoolz.functoolz.Compose.__call__
+  File "cytoolz\\functoolz.pyx", line 263, in cytoolz.functoolz.curry.__call__
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\eth_utils\decorators.py", line 91, in wrapper
+    return ReturnType(result)
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\eth_utils\applicators.py", line 22, in apply_formatter_at_index
+    yield formatter(item)
+          ^^^^^^^^^^^^^^^
+  File "cytoolz\\functoolz.pyx", line 263, in cytoolz.functoolz.curry.__call__
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\_utils\rpc_abi.py", line 224, in apply_abi_formatters_to_dict
+    formatted_values = map_abi_data(
+                       ^^^^^^^^^^^^^
+  File "cytoolz\\functoolz.pyx", line 263, in cytoolz.functoolz.curry.__call__
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\_utils\abi.py", line 811, in map_abi_data
+    return pipe(data, *pipeline)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "cytoolz\\functoolz.pyx", line 680, in cytoolz.functoolz.pipe
+  File "cytoolz\\functoolz.pyx", line 655, in cytoolz.functoolz.c_pipe
+  File "cytoolz\\functoolz.pyx", line 263, in cytoolz.functoolz.curry.__call__
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\_utils\abi.py", line 825, in abi_data_tree
+    return [
+           ^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\_utils\abi.py", line 826, in <listcomp>
+    abi_sub_tree(data_type, data_value)
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\_utils\abi.py", line 877, in abi_sub_tree
+    abi_type = parse(type_str_or_abi_type)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\eth_abi\grammar.py", line 123, in parse
+    return super().parse(type_str)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 252, in parse
+    return self._parse_or_match(text, pos, 'parse')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 287, in _parse_or_match
+    return self.visit(getattr(self.grammar, method_name)(text, pos=pos))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 213, in visit
+    return method(node, [self.visit(n) for n in node])
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 213, in <listcomp>
+    return method(node, [self.visit(n) for n in node])
+                         ^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 213, in visit
+    return method(node, [self.visit(n) for n in node])
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 213, in <listcomp>
+    return method(node, [self.visit(n) for n in node])
+                         ^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 225, in visit
+    raise VisitationError(exc, exc_class, node) from exc
+parsimonious.exceptions.VisitationError: TypeError: isinstance() arg 2 must be a type, a tuple of types, or a union
+
+Parse tree:
+<Node matching "">  <-- *** We were here. ***
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 213, in visit
+    return method(node, [self.visit(n) for n in node])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\eth_abi\grammar.py", line 99, in generic_visit
+    if isinstance(node.expr, expressions.Optional):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: isinstance() arg 2 must be a type, a tuple of types, or a union
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\AlphaBot.py", line 5345, in runLoop
+    run()
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\AlphaBot.py", line 4791, in run
+    tokens = load_tokens_file(command_line_args.tokens, True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\AlphaBot.py", line 662, in load_tokens_file
+    '_BASE_PRICE': calculate_base_price(),
+                   ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\cachetools\_cached.py", line 227, in wrapper
+    v = func(*args, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\AlphaBot.py", line 3065, in calculate_base_price
+    reserves = pair_contract.functions.getReserves().call()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\contract.py", line 970, in call
+    return call_contract_function(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\contract.py", line 1564, in call_contract_function
+    return_data = web3.eth.call(
+                  ^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\module.py", line 53, in caller
+    (method_str, params), response_formatters = method.process_params(module, *args, **kwargs)  # noqa: E501
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\method.py", line 202, in process_params
+    _apply_request_formatters(params, self.request_formatters(method)))
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\eth_utils\functional.py", line 45, in inner
+    return callback(fn(*args, **kwargs))
+                    ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\method.py", line 52, in _apply_request_formatters
+    formatted_params = pipe(params, request_formatters)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "cytoolz\\functoolz.pyx", line 680, in cytoolz.functoolz.pipe
+  File "cytoolz\\functoolz.pyx", line 655, in cytoolz.functoolz.c_pipe
+  File "cytoolz\\functoolz.pyx", line 518, in cytoolz.functoolz.Compose.__call__
+  File "cytoolz\\functoolz.pyx", line 263, in cytoolz.functoolz.curry.__call__
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\eth_utils\decorators.py", line 91, in wrapper
+    return ReturnType(result)
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\eth_utils\applicators.py", line 22, in apply_formatter_at_index
+    yield formatter(item)
+          ^^^^^^^^^^^^^^^
+  File "cytoolz\\functoolz.pyx", line 263, in cytoolz.functoolz.curry.__call__
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\_utils\rpc_abi.py", line 224, in apply_abi_formatters_to_dict
+    formatted_values = map_abi_data(
+                       ^^^^^^^^^^^^^
+  File "cytoolz\\functoolz.pyx", line 263, in cytoolz.functoolz.curry.__call__
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\_utils\abi.py", line 811, in map_abi_data
+    return pipe(data, *pipeline)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "cytoolz\\functoolz.pyx", line 680, in cytoolz.functoolz.pipe
+  File "cytoolz\\functoolz.pyx", line 655, in cytoolz.functoolz.c_pipe
+  File "cytoolz\\functoolz.pyx", line 263, in cytoolz.functoolz.curry.__call__
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\_utils\abi.py", line 825, in abi_data_tree
+    return [
+           ^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\_utils\abi.py", line 826, in <listcomp>
+    abi_sub_tree(data_type, data_value)
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\_utils\abi.py", line 877, in abi_sub_tree
+    abi_type = parse(type_str_or_abi_type)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\eth_abi\grammar.py", line 123, in parse
+    return super().parse(type_str)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 252, in parse
+    return self._parse_or_match(text, pos, 'parse')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 287, in _parse_or_match
+    return self.visit(getattr(self.grammar, method_name)(text, pos=pos))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 213, in visit
+    return method(node, [self.visit(n) for n in node])
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 213, in <listcomp>
+    return method(node, [self.visit(n) for n in node])
+                         ^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 213, in visit
+    return method(node, [self.visit(n) for n in node])
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 213, in <listcomp>
+    return method(node, [self.visit(n) for n in node])
+                         ^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 225, in visit
+    raise VisitationError(exc, exc_class, node) from exc
+parsimonious.exceptions.VisitationError: TypeError: isinstance() arg 2 must be a type, a tuple of types, or a union
+
+Parse tree:
+<Node matching "">  <-- *** We were here. ***
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\AlphaBot.py", line 5345, in runLoop
+    run()
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\AlphaBot.py", line 4793, in run
+    tokens = reload_tokens_file(command_line_args.tokens, True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\AlphaBot.py", line 929, in reload_tokens_file
+    '_LIQUIDITY_READY': _TOKENS_saved[token['SYMBOL']]['_LIQUIDITY_READY'],
+                        ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+KeyError: 'CAKE'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\AlphaBot.py", line 5345, in runLoop
+    run()
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\AlphaBot.py", line 4793, in run
+    tokens = reload_tokens_file(command_line_args.tokens, True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\AlphaBot.py", line 929, in reload_tokens_file
+    '_LIQUIDITY_READY': _TOKENS_saved[token['SYMBOL']]['_LIQUIDITY_READY'],
+                        ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+KeyError: 'CAKE'
+'CAKE'
+Traceback (most recent call last):
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 213, in visit
+    return method(node, [self.visit(n) for n in node])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\eth_abi\grammar.py", line 99, in generic_visit
+    if isinstance(node.expr, expressions.Optional):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: isinstance() arg 2 must be a type, a tuple of types, or a union
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\AlphaBot.py", line 5377, in <module>
+    true_balance = auth()
+                   ^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\AlphaBot.py", line 2337, in auth
+    decimals = balanceContract.functions.decimals().call()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\contract.py", line 970, in call
+    return call_contract_function(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\contract.py", line 1564, in call_contract_function
+    return_data = web3.eth.call(
+                  ^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\module.py", line 53, in caller
+    (method_str, params), response_formatters = method.process_params(module, *args, **kwargs)  # noqa: E501
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\method.py", line 202, in process_params
+    _apply_request_formatters(params, self.request_formatters(method)))
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\eth_utils\functional.py", line 45, in inner
+    return callback(fn(*args, **kwargs))
+                    ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\method.py", line 52, in _apply_request_formatters
+    formatted_params = pipe(params, request_formatters)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "cytoolz\\functoolz.pyx", line 680, in cytoolz.functoolz.pipe
+  File "cytoolz\\functoolz.pyx", line 655, in cytoolz.functoolz.c_pipe
+  File "cytoolz\\functoolz.pyx", line 518, in cytoolz.functoolz.Compose.__call__
+  File "cytoolz\\functoolz.pyx", line 263, in cytoolz.functoolz.curry.__call__
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\eth_utils\decorators.py", line 91, in wrapper
+    return ReturnType(result)
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\eth_utils\applicators.py", line 22, in apply_formatter_at_index
+    yield formatter(item)
+          ^^^^^^^^^^^^^^^
+  File "cytoolz\\functoolz.pyx", line 263, in cytoolz.functoolz.curry.__call__
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\_utils\rpc_abi.py", line 224, in apply_abi_formatters_to_dict
+    formatted_values = map_abi_data(
+                       ^^^^^^^^^^^^^
+  File "cytoolz\\functoolz.pyx", line 263, in cytoolz.functoolz.curry.__call__
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\_utils\abi.py", line 811, in map_abi_data
+    return pipe(data, *pipeline)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "cytoolz\\functoolz.pyx", line 680, in cytoolz.functoolz.pipe
+  File "cytoolz\\functoolz.pyx", line 655, in cytoolz.functoolz.c_pipe
+  File "cytoolz\\functoolz.pyx", line 263, in cytoolz.functoolz.curry.__call__
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\_utils\abi.py", line 825, in abi_data_tree
+    return [
+           ^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\_utils\abi.py", line 826, in <listcomp>
+    abi_sub_tree(data_type, data_value)
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\_utils\abi.py", line 877, in abi_sub_tree
+    abi_type = parse(type_str_or_abi_type)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\eth_abi\grammar.py", line 123, in parse
+    return super().parse(type_str)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 252, in parse
+    return self._parse_or_match(text, pos, 'parse')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 287, in _parse_or_match
+    return self.visit(getattr(self.grammar, method_name)(text, pos=pos))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 213, in visit
+    return method(node, [self.visit(n) for n in node])
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 213, in <listcomp>
+    return method(node, [self.visit(n) for n in node])
+                         ^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 213, in visit
+    return method(node, [self.visit(n) for n in node])
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 213, in <listcomp>
+    return method(node, [self.visit(n) for n in node])
+                         ^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 225, in visit
+    raise VisitationError(exc, exc_class, node) from exc
+parsimonious.exceptions.VisitationError: TypeError: isinstance() arg 2 must be a type, a tuple of types, or a union
+
+Parse tree:
+<Node matching "">  <-- *** We were here. ***
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 213, in visit
+    return method(node, [self.visit(n) for n in node])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\eth_abi\grammar.py", line 99, in generic_visit
+    if isinstance(node.expr, expressions.Optional):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: isinstance() arg 2 must be a type, a tuple of types, or a union
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\AlphaBot.py", line 5345, in runLoop
+    run()
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\AlphaBot.py", line 4791, in run
+    tokens = load_tokens_file(command_line_args.tokens, True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\AlphaBot.py", line 662, in load_tokens_file
+    '_BASE_PRICE': calculate_base_price(),
+                   ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\cachetools\_cached.py", line 227, in wrapper
+    v = func(*args, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\AlphaBot.py", line 3065, in calculate_base_price
+    reserves = pair_contract.functions.getReserves().call()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\contract.py", line 970, in call
+    return call_contract_function(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\contract.py", line 1564, in call_contract_function
+    return_data = web3.eth.call(
+                  ^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\module.py", line 53, in caller
+    (method_str, params), response_formatters = method.process_params(module, *args, **kwargs)  # noqa: E501
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\method.py", line 202, in process_params
+    _apply_request_formatters(params, self.request_formatters(method)))
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\eth_utils\functional.py", line 45, in inner
+    return callback(fn(*args, **kwargs))
+                    ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\method.py", line 52, in _apply_request_formatters
+    formatted_params = pipe(params, request_formatters)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "cytoolz\\functoolz.pyx", line 680, in cytoolz.functoolz.pipe
+  File "cytoolz\\functoolz.pyx", line 655, in cytoolz.functoolz.c_pipe
+  File "cytoolz\\functoolz.pyx", line 518, in cytoolz.functoolz.Compose.__call__
+  File "cytoolz\\functoolz.pyx", line 263, in cytoolz.functoolz.curry.__call__
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\eth_utils\decorators.py", line 91, in wrapper
+    return ReturnType(result)
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\eth_utils\applicators.py", line 22, in apply_formatter_at_index
+    yield formatter(item)
+          ^^^^^^^^^^^^^^^
+  File "cytoolz\\functoolz.pyx", line 263, in cytoolz.functoolz.curry.__call__
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\_utils\rpc_abi.py", line 224, in apply_abi_formatters_to_dict
+    formatted_values = map_abi_data(
+                       ^^^^^^^^^^^^^
+  File "cytoolz\\functoolz.pyx", line 263, in cytoolz.functoolz.curry.__call__
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\_utils\abi.py", line 811, in map_abi_data
+    return pipe(data, *pipeline)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "cytoolz\\functoolz.pyx", line 680, in cytoolz.functoolz.pipe
+  File "cytoolz\\functoolz.pyx", line 655, in cytoolz.functoolz.c_pipe
+  File "cytoolz\\functoolz.pyx", line 263, in cytoolz.functoolz.curry.__call__
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\_utils\abi.py", line 825, in abi_data_tree
+    return [
+           ^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\_utils\abi.py", line 826, in <listcomp>
+    abi_sub_tree(data_type, data_value)
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\_utils\abi.py", line 877, in abi_sub_tree
+    abi_type = parse(type_str_or_abi_type)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\eth_abi\grammar.py", line 123, in parse
+    return super().parse(type_str)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 252, in parse
+    return self._parse_or_match(text, pos, 'parse')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 287, in _parse_or_match
+    return self.visit(getattr(self.grammar, method_name)(text, pos=pos))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 213, in visit
+    return method(node, [self.visit(n) for n in node])
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 213, in <listcomp>
+    return method(node, [self.visit(n) for n in node])
+                         ^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 213, in visit
+    return method(node, [self.visit(n) for n in node])
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 213, in <listcomp>
+    return method(node, [self.visit(n) for n in node])
+                         ^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 225, in visit
+    raise VisitationError(exc, exc_class, node) from exc
+parsimonious.exceptions.VisitationError: TypeError: isinstance() arg 2 must be a type, a tuple of types, or a union
+
+Parse tree:
+<Node matching "">  <-- *** We were here. ***
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\AlphaBot.py", line 5345, in runLoop
+    run()
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\AlphaBot.py", line 4793, in run
+    tokens = reload_tokens_file(command_line_args.tokens, True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\AlphaBot.py", line 929, in reload_tokens_file
+    '_LIQUIDITY_READY': _TOKENS_saved[token['SYMBOL']]['_LIQUIDITY_READY'],
+                        ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+KeyError: 'CAKE'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\AlphaBot.py", line 5345, in runLoop
+    run()
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\AlphaBot.py", line 4793, in run
+    tokens = reload_tokens_file(command_line_args.tokens, True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\AlphaBot.py", line 929, in reload_tokens_file
+    '_LIQUIDITY_READY': _TOKENS_saved[token['SYMBOL']]['_LIQUIDITY_READY'],
+                        ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+KeyError: 'CAKE'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\AlphaBot.py", line 5345, in runLoop
+    run()
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\AlphaBot.py", line 4793, in run
+    tokens = reload_tokens_file(command_line_args.tokens, True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\AlphaBot.py", line 929, in reload_tokens_file
+    '_LIQUIDITY_READY': _TOKENS_saved[token['SYMBOL']]['_LIQUIDITY_READY'],
+                        ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+KeyError: 'CAKE'
+'CAKE'
+Traceback (most recent call last):
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 213, in visit
+    return method(node, [self.visit(n) for n in node])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\eth_abi\grammar.py", line 99, in generic_visit
+    if isinstance(node.expr, expressions.Optional):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: isinstance() arg 2 must be a type, a tuple of types, or a union
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\AlphaBot.py", line 5377, in <module>
+    true_balance = auth()
+                   ^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\AlphaBot.py", line 2337, in auth
+    decimals = balanceContract.functions.decimals().call()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\contract.py", line 970, in call
+    return call_contract_function(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\contract.py", line 1564, in call_contract_function
+    return_data = web3.eth.call(
+                  ^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\module.py", line 53, in caller
+    (method_str, params), response_formatters = method.process_params(module, *args, **kwargs)  # noqa: E501
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\method.py", line 202, in process_params
+    _apply_request_formatters(params, self.request_formatters(method)))
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\eth_utils\functional.py", line 45, in inner
+    return callback(fn(*args, **kwargs))
+                    ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\method.py", line 52, in _apply_request_formatters
+    formatted_params = pipe(params, request_formatters)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "cytoolz\\functoolz.pyx", line 680, in cytoolz.functoolz.pipe
+  File "cytoolz\\functoolz.pyx", line 655, in cytoolz.functoolz.c_pipe
+  File "cytoolz\\functoolz.pyx", line 518, in cytoolz.functoolz.Compose.__call__
+  File "cytoolz\\functoolz.pyx", line 263, in cytoolz.functoolz.curry.__call__
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\eth_utils\decorators.py", line 91, in wrapper
+    return ReturnType(result)
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\eth_utils\applicators.py", line 22, in apply_formatter_at_index
+    yield formatter(item)
+          ^^^^^^^^^^^^^^^
+  File "cytoolz\\functoolz.pyx", line 263, in cytoolz.functoolz.curry.__call__
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\_utils\rpc_abi.py", line 224, in apply_abi_formatters_to_dict
+    formatted_values = map_abi_data(
+                       ^^^^^^^^^^^^^
+  File "cytoolz\\functoolz.pyx", line 263, in cytoolz.functoolz.curry.__call__
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\_utils\abi.py", line 811, in map_abi_data
+    return pipe(data, *pipeline)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "cytoolz\\functoolz.pyx", line 680, in cytoolz.functoolz.pipe
+  File "cytoolz\\functoolz.pyx", line 655, in cytoolz.functoolz.c_pipe
+  File "cytoolz\\functoolz.pyx", line 263, in cytoolz.functoolz.curry.__call__
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\_utils\abi.py", line 825, in abi_data_tree
+    return [
+           ^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\_utils\abi.py", line 826, in <listcomp>
+    abi_sub_tree(data_type, data_value)
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\_utils\abi.py", line 877, in abi_sub_tree
+    abi_type = parse(type_str_or_abi_type)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\eth_abi\grammar.py", line 123, in parse
+    return super().parse(type_str)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 252, in parse
+    return self._parse_or_match(text, pos, 'parse')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 287, in _parse_or_match
+    return self.visit(getattr(self.grammar, method_name)(text, pos=pos))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 213, in visit
+    return method(node, [self.visit(n) for n in node])
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 213, in <listcomp>
+    return method(node, [self.visit(n) for n in node])
+                         ^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 213, in visit
+    return method(node, [self.visit(n) for n in node])
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 213, in <listcomp>
+    return method(node, [self.visit(n) for n in node])
+                         ^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 225, in visit
+    raise VisitationError(exc, exc_class, node) from exc
+parsimonious.exceptions.VisitationError: TypeError: isinstance() arg 2 must be a type, a tuple of types, or a union
+
+Parse tree:
+<Node matching "">  <-- *** We were here. ***
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 213, in visit
+    return method(node, [self.visit(n) for n in node])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\eth_abi\grammar.py", line 99, in generic_visit
+    if isinstance(node.expr, expressions.Optional):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: isinstance() arg 2 must be a type, a tuple of types, or a union
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\AlphaBot.py", line 5345, in runLoop
+    run()
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\AlphaBot.py", line 4791, in run
+    tokens = load_tokens_file(command_line_args.tokens, True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\AlphaBot.py", line 662, in load_tokens_file
+    '_BASE_PRICE': calculate_base_price(),
+                   ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\cachetools\_cached.py", line 227, in wrapper
+    v = func(*args, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\AlphaBot.py", line 3065, in calculate_base_price
+    reserves = pair_contract.functions.getReserves().call()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\contract.py", line 970, in call
+    return call_contract_function(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\contract.py", line 1564, in call_contract_function
+    return_data = web3.eth.call(
+                  ^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\module.py", line 53, in caller
+    (method_str, params), response_formatters = method.process_params(module, *args, **kwargs)  # noqa: E501
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\method.py", line 202, in process_params
+    _apply_request_formatters(params, self.request_formatters(method)))
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\eth_utils\functional.py", line 45, in inner
+    return callback(fn(*args, **kwargs))
+                    ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\method.py", line 52, in _apply_request_formatters
+    formatted_params = pipe(params, request_formatters)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "cytoolz\\functoolz.pyx", line 680, in cytoolz.functoolz.pipe
+  File "cytoolz\\functoolz.pyx", line 655, in cytoolz.functoolz.c_pipe
+  File "cytoolz\\functoolz.pyx", line 518, in cytoolz.functoolz.Compose.__call__
+  File "cytoolz\\functoolz.pyx", line 263, in cytoolz.functoolz.curry.__call__
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\eth_utils\decorators.py", line 91, in wrapper
+    return ReturnType(result)
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\eth_utils\applicators.py", line 22, in apply_formatter_at_index
+    yield formatter(item)
+          ^^^^^^^^^^^^^^^
+  File "cytoolz\\functoolz.pyx", line 263, in cytoolz.functoolz.curry.__call__
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\_utils\rpc_abi.py", line 224, in apply_abi_formatters_to_dict
+    formatted_values = map_abi_data(
+                       ^^^^^^^^^^^^^
+  File "cytoolz\\functoolz.pyx", line 263, in cytoolz.functoolz.curry.__call__
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\_utils\abi.py", line 811, in map_abi_data
+    return pipe(data, *pipeline)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "cytoolz\\functoolz.pyx", line 680, in cytoolz.functoolz.pipe
+  File "cytoolz\\functoolz.pyx", line 655, in cytoolz.functoolz.c_pipe
+  File "cytoolz\\functoolz.pyx", line 263, in cytoolz.functoolz.curry.__call__
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\_utils\abi.py", line 825, in abi_data_tree
+    return [
+           ^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\_utils\abi.py", line 826, in <listcomp>
+    abi_sub_tree(data_type, data_value)
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\_utils\abi.py", line 877, in abi_sub_tree
+    abi_type = parse(type_str_or_abi_type)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\eth_abi\grammar.py", line 123, in parse
+    return super().parse(type_str)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 252, in parse
+    return self._parse_or_match(text, pos, 'parse')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 287, in _parse_or_match
+    return self.visit(getattr(self.grammar, method_name)(text, pos=pos))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 213, in visit
+    return method(node, [self.visit(n) for n in node])
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 213, in <listcomp>
+    return method(node, [self.visit(n) for n in node])
+                         ^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 213, in visit
+    return method(node, [self.visit(n) for n in node])
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 213, in <listcomp>
+    return method(node, [self.visit(n) for n in node])
+                         ^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 225, in visit
+    raise VisitationError(exc, exc_class, node) from exc
+parsimonious.exceptions.VisitationError: TypeError: isinstance() arg 2 must be a type, a tuple of types, or a union
+
+Parse tree:
+<Node matching "">  <-- *** We were here. ***
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\AlphaBot.py", line 5345, in runLoop
+    run()
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\AlphaBot.py", line 4793, in run
+    tokens = reload_tokens_file(command_line_args.tokens, True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\AlphaBot.py", line 929, in reload_tokens_file
+    '_LIQUIDITY_READY': _TOKENS_saved[token['SYMBOL']]['_LIQUIDITY_READY'],
+                        ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+KeyError: 'CAKE'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\AlphaBot.py", line 5345, in runLoop
+    run()
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\AlphaBot.py", line 4793, in run
+    tokens = reload_tokens_file(command_line_args.tokens, True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\AlphaBot.py", line 929, in reload_tokens_file
+    '_LIQUIDITY_READY': _TOKENS_saved[token['SYMBOL']]['_LIQUIDITY_READY'],
+                        ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+KeyError: 'CAKE'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\AlphaBot.py", line 5345, in runLoop
+    run()
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\AlphaBot.py", line 4793, in run
+    tokens = reload_tokens_file(command_line_args.tokens, True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\AlphaBot.py", line 929, in reload_tokens_file
+    '_LIQUIDITY_READY': _TOKENS_saved[token['SYMBOL']]['_LIQUIDITY_READY'],
+                        ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+KeyError: 'CAKE'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\AlphaBot.py", line 5345, in runLoop
+    run()
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\AlphaBot.py", line 4793, in run
+    tokens = reload_tokens_file(command_line_args.tokens, True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\AlphaBot.py", line 929, in reload_tokens_file
+    '_LIQUIDITY_READY': _TOKENS_saved[token['SYMBOL']]['_LIQUIDITY_READY'],
+                        ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+KeyError: 'CAKE'
+TypeError: isinstance() arg 2 must be a type, a tuple of types, or a union
+
+Parse tree:
+<Node matching "">  <-- *** We were here. ***
+Traceback (most recent call last):
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 213, in visit
+    return method(node, [self.visit(n) for n in node])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\eth_abi\grammar.py", line 99, in generic_visit
+    if isinstance(node.expr, expressions.Optional):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: isinstance() arg 2 must be a type, a tuple of types, or a union
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\AlphaBot.py", line 5339, in runLoop
+    run()
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\AlphaBot.py", line 4785, in run
+    tokens = load_tokens_file(command_line_args.tokens, True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\AlphaBot.py", line 662, in load_tokens_file
+    '_BASE_PRICE': calculate_base_price(),
+                   ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\cachetools\_cached.py", line 227, in wrapper
+    v = func(*args, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\AlphaBot.py", line 3059, in calculate_base_price
+    reserves = pair_contract.functions.getReserves().call()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\contract.py", line 970, in call
+    return call_contract_function(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\contract.py", line 1564, in call_contract_function
+    return_data = web3.eth.call(
+                  ^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\module.py", line 53, in caller
+    (method_str, params), response_formatters = method.process_params(module, *args, **kwargs)  # noqa: E501
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\method.py", line 202, in process_params
+    _apply_request_formatters(params, self.request_formatters(method)))
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\eth_utils\functional.py", line 45, in inner
+    return callback(fn(*args, **kwargs))
+                    ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\method.py", line 52, in _apply_request_formatters
+    formatted_params = pipe(params, request_formatters)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "cytoolz\\functoolz.pyx", line 680, in cytoolz.functoolz.pipe
+  File "cytoolz\\functoolz.pyx", line 655, in cytoolz.functoolz.c_pipe
+  File "cytoolz\\functoolz.pyx", line 518, in cytoolz.functoolz.Compose.__call__
+  File "cytoolz\\functoolz.pyx", line 263, in cytoolz.functoolz.curry.__call__
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\eth_utils\decorators.py", line 91, in wrapper
+    return ReturnType(result)
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\eth_utils\applicators.py", line 22, in apply_formatter_at_index
+    yield formatter(item)
+          ^^^^^^^^^^^^^^^
+  File "cytoolz\\functoolz.pyx", line 263, in cytoolz.functoolz.curry.__call__
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\_utils\rpc_abi.py", line 224, in apply_abi_formatters_to_dict
+    formatted_values = map_abi_data(
+                       ^^^^^^^^^^^^^
+  File "cytoolz\\functoolz.pyx", line 263, in cytoolz.functoolz.curry.__call__
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\_utils\abi.py", line 811, in map_abi_data
+    return pipe(data, *pipeline)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "cytoolz\\functoolz.pyx", line 680, in cytoolz.functoolz.pipe
+  File "cytoolz\\functoolz.pyx", line 655, in cytoolz.functoolz.c_pipe
+  File "cytoolz\\functoolz.pyx", line 263, in cytoolz.functoolz.curry.__call__
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\_utils\abi.py", line 825, in abi_data_tree
+    return [
+           ^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\_utils\abi.py", line 826, in <listcomp>
+    abi_sub_tree(data_type, data_value)
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\_utils\abi.py", line 877, in abi_sub_tree
+    abi_type = parse(type_str_or_abi_type)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\eth_abi\grammar.py", line 123, in parse
+    return super().parse(type_str)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 252, in parse
+    return self._parse_or_match(text, pos, 'parse')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 287, in _parse_or_match
+    return self.visit(getattr(self.grammar, method_name)(text, pos=pos))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 213, in visit
+    return method(node, [self.visit(n) for n in node])
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 213, in <listcomp>
+    return method(node, [self.visit(n) for n in node])
+                         ^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 213, in visit
+    return method(node, [self.visit(n) for n in node])
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 213, in <listcomp>
+    return method(node, [self.visit(n) for n in node])
+                         ^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 225, in visit
+    raise VisitationError(exc, exc_class, node) from exc
+parsimonious.exceptions.VisitationError: TypeError: isinstance() arg 2 must be a type, a tuple of types, or a union
+
+Parse tree:
+<Node matching "">  <-- *** We were here. ***
+'CAKE'
+Traceback (most recent call last):
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 213, in visit
+    return method(node, [self.visit(n) for n in node])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\eth_abi\grammar.py", line 99, in generic_visit
+    if isinstance(node.expr, expressions.Optional):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: isinstance() arg 2 must be a type, a tuple of types, or a union
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\AlphaBot.py", line 5339, in runLoop
+    run()
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\AlphaBot.py", line 4785, in run
+    tokens = load_tokens_file(command_line_args.tokens, True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\AlphaBot.py", line 662, in load_tokens_file
+    '_BASE_PRICE': calculate_base_price(),
+                   ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\cachetools\_cached.py", line 227, in wrapper
+    v = func(*args, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\AlphaBot.py", line 3059, in calculate_base_price
+    reserves = pair_contract.functions.getReserves().call()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\contract.py", line 970, in call
+    return call_contract_function(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\contract.py", line 1564, in call_contract_function
+    return_data = web3.eth.call(
+                  ^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\module.py", line 53, in caller
+    (method_str, params), response_formatters = method.process_params(module, *args, **kwargs)  # noqa: E501
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\method.py", line 202, in process_params
+    _apply_request_formatters(params, self.request_formatters(method)))
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\eth_utils\functional.py", line 45, in inner
+    return callback(fn(*args, **kwargs))
+                    ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\method.py", line 52, in _apply_request_formatters
+    formatted_params = pipe(params, request_formatters)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "cytoolz\\functoolz.pyx", line 680, in cytoolz.functoolz.pipe
+  File "cytoolz\\functoolz.pyx", line 655, in cytoolz.functoolz.c_pipe
+  File "cytoolz\\functoolz.pyx", line 518, in cytoolz.functoolz.Compose.__call__
+  File "cytoolz\\functoolz.pyx", line 263, in cytoolz.functoolz.curry.__call__
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\eth_utils\decorators.py", line 91, in wrapper
+    return ReturnType(result)
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\eth_utils\applicators.py", line 22, in apply_formatter_at_index
+    yield formatter(item)
+          ^^^^^^^^^^^^^^^
+  File "cytoolz\\functoolz.pyx", line 263, in cytoolz.functoolz.curry.__call__
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\_utils\rpc_abi.py", line 224, in apply_abi_formatters_to_dict
+    formatted_values = map_abi_data(
+                       ^^^^^^^^^^^^^
+  File "cytoolz\\functoolz.pyx", line 263, in cytoolz.functoolz.curry.__call__
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\_utils\abi.py", line 811, in map_abi_data
+    return pipe(data, *pipeline)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "cytoolz\\functoolz.pyx", line 680, in cytoolz.functoolz.pipe
+  File "cytoolz\\functoolz.pyx", line 655, in cytoolz.functoolz.c_pipe
+  File "cytoolz\\functoolz.pyx", line 263, in cytoolz.functoolz.curry.__call__
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\_utils\abi.py", line 825, in abi_data_tree
+    return [
+           ^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\_utils\abi.py", line 826, in <listcomp>
+    abi_sub_tree(data_type, data_value)
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\_utils\abi.py", line 877, in abi_sub_tree
+    abi_type = parse(type_str_or_abi_type)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\eth_abi\grammar.py", line 123, in parse
+    return super().parse(type_str)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 252, in parse
+    return self._parse_or_match(text, pos, 'parse')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 287, in _parse_or_match
+    return self.visit(getattr(self.grammar, method_name)(text, pos=pos))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 213, in visit
+    return method(node, [self.visit(n) for n in node])
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 213, in <listcomp>
+    return method(node, [self.visit(n) for n in node])
+                         ^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 213, in visit
+    return method(node, [self.visit(n) for n in node])
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 213, in <listcomp>
+    return method(node, [self.visit(n) for n in node])
+                         ^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 225, in visit
+    raise VisitationError(exc, exc_class, node) from exc
+parsimonious.exceptions.VisitationError: TypeError: isinstance() arg 2 must be a type, a tuple of types, or a union
+
+Parse tree:
+<Node matching "">  <-- *** We were here. ***
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\AlphaBot.py", line 5339, in runLoop
+    run()
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\AlphaBot.py", line 4787, in run
+    tokens = reload_tokens_file(command_line_args.tokens, True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\AlphaBot.py", line 929, in reload_tokens_file
+    '_LIQUIDITY_READY': _TOKENS_saved[token['SYMBOL']]['_LIQUIDITY_READY'],
+                        ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+KeyError: 'CAKE'
+TypeError: isinstance() arg 2 must be a type, a tuple of types, or a union
+
+Parse tree:
+<Node matching "">  <-- *** We were here. ***
+Traceback (most recent call last):
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 213, in visit
+    return method(node, [self.visit(n) for n in node])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\eth_abi\grammar.py", line 99, in generic_visit
+    if isinstance(node.expr, expressions.Optional):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: isinstance() arg 2 must be a type, a tuple of types, or a union
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\AlphaBot.py", line 5339, in runLoop
+    run()
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\AlphaBot.py", line 4785, in run
+    tokens = load_tokens_file(command_line_args.tokens, True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\AlphaBot.py", line 662, in load_tokens_file
+    '_BASE_PRICE': calculate_base_price(),
+                   ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\cachetools\_cached.py", line 227, in wrapper
+    v = func(*args, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\AlphaBot.py", line 3059, in calculate_base_price
+    reserves = pair_contract.functions.getReserves().call()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\contract.py", line 970, in call
+    return call_contract_function(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\contract.py", line 1564, in call_contract_function
+    return_data = web3.eth.call(
+                  ^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\module.py", line 53, in caller
+    (method_str, params), response_formatters = method.process_params(module, *args, **kwargs)  # noqa: E501
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\method.py", line 202, in process_params
+    _apply_request_formatters(params, self.request_formatters(method)))
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\eth_utils\functional.py", line 45, in inner
+    return callback(fn(*args, **kwargs))
+                    ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\method.py", line 52, in _apply_request_formatters
+    formatted_params = pipe(params, request_formatters)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "cytoolz\\functoolz.pyx", line 680, in cytoolz.functoolz.pipe
+  File "cytoolz\\functoolz.pyx", line 655, in cytoolz.functoolz.c_pipe
+  File "cytoolz\\functoolz.pyx", line 518, in cytoolz.functoolz.Compose.__call__
+  File "cytoolz\\functoolz.pyx", line 263, in cytoolz.functoolz.curry.__call__
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\eth_utils\decorators.py", line 91, in wrapper
+    return ReturnType(result)
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\eth_utils\applicators.py", line 22, in apply_formatter_at_index
+    yield formatter(item)
+          ^^^^^^^^^^^^^^^
+  File "cytoolz\\functoolz.pyx", line 263, in cytoolz.functoolz.curry.__call__
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\_utils\rpc_abi.py", line 224, in apply_abi_formatters_to_dict
+    formatted_values = map_abi_data(
+                       ^^^^^^^^^^^^^
+  File "cytoolz\\functoolz.pyx", line 263, in cytoolz.functoolz.curry.__call__
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\_utils\abi.py", line 811, in map_abi_data
+    return pipe(data, *pipeline)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "cytoolz\\functoolz.pyx", line 680, in cytoolz.functoolz.pipe
+  File "cytoolz\\functoolz.pyx", line 655, in cytoolz.functoolz.c_pipe
+  File "cytoolz\\functoolz.pyx", line 263, in cytoolz.functoolz.curry.__call__
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\_utils\abi.py", line 825, in abi_data_tree
+    return [
+           ^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\_utils\abi.py", line 826, in <listcomp>
+    abi_sub_tree(data_type, data_value)
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\_utils\abi.py", line 877, in abi_sub_tree
+    abi_type = parse(type_str_or_abi_type)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\eth_abi\grammar.py", line 123, in parse
+    return super().parse(type_str)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 252, in parse
+    return self._parse_or_match(text, pos, 'parse')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 287, in _parse_or_match
+    return self.visit(getattr(self.grammar, method_name)(text, pos=pos))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 213, in visit
+    return method(node, [self.visit(n) for n in node])
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 213, in <listcomp>
+    return method(node, [self.visit(n) for n in node])
+                         ^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 213, in visit
+    return method(node, [self.visit(n) for n in node])
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 213, in <listcomp>
+    return method(node, [self.visit(n) for n in node])
+                         ^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\parsimonious\nodes.py", line 225, in visit
+    raise VisitationError(exc, exc_class, node) from exc
+parsimonious.exceptions.VisitationError: TypeError: isinstance() arg 2 must be a type, a tuple of types, or a union
+
+Parse tree:
+<Node matching "">  <-- *** We were here. ***
+('Web3.py only accepts checksum addresses. The software that gave you this non-checksum address should be considered unsafe, please file it as a bug on their platform. Try using an ENS name instead. Or, if you must accept lower safety, use Web3.to_checksum_address(lower_case_address).', '0xb2ee8896a65715ec07dfbf5bea080aca43cea8b4')
+Traceback (most recent call last):
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\AlphaBot.py", line 5339, in runLoop
+    run()
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\AlphaBot.py", line 4876, in run
+    token['_TOKEN_BALANCE'] = check_balance(token['ADDRESS'], token['SYMBOL'], display_quantity=False) / token['_CONTRACT_DECIMALS']
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\AlphaBot.py", line 2469, in check_balance
+    balance = balanceContract.functions.balanceOf(settings['WALLETADDRESS']).call()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\contract.py", line 970, in call
+    return call_contract_function(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\contract.py", line 1553, in call_contract_function
+    call_transaction = prepare_transaction(
+                       ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\_utils\contracts.py", line 236, in prepare_transaction
+    prepared_transaction['data'] = encode_transaction_data(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\_utils\contracts.py", line 267, in encode_transaction_data
+    return add_0x_prefix(encode_abi(web3, fn_abi, fn_arguments, fn_selector))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\_utils\contracts.py", line 188, in encode_abi
+    normalized_arguments = map_abi_data(
+                           ^^^^^^^^^^^^^
+  File "cytoolz\\functoolz.pyx", line 263, in cytoolz.functoolz.curry.__call__
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\_utils\abi.py", line 811, in map_abi_data
+    return pipe(data, *pipeline)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "cytoolz\\functoolz.pyx", line 680, in cytoolz.functoolz.pipe
+  File "cytoolz\\functoolz.pyx", line 655, in cytoolz.functoolz.c_pipe
+  File "cytoolz\\functoolz.pyx", line 263, in cytoolz.functoolz.curry.__call__
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\_utils\abi.py", line 845, in data_tree_map
+    return recursive_map(map_to_typed_data, data_tree)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\_utils\decorators.py", line 30, in wrapped
+    wrapped_val = to_wrap(*args)
+                  ^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\_utils\formatters.py", line 89, in recursive_map
+    items_mapped = map_collection(recurse, data)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\_utils\formatters.py", line 76, in map_collection
+    return datatype(map(func, collection))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\_utils\formatters.py", line 88, in recurse
+    return recursive_map(func, item)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\_utils\decorators.py", line 30, in wrapped
+    wrapped_val = to_wrap(*args)
+                  ^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\_utils\formatters.py", line 90, in recursive_map
+    return func(items_mapped)
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\_utils\abi.py", line 842, in map_to_typed_data
+    return ABITypedData(func(*elements))
+                        ^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\_utils\normalizers.py", line 78, in wrapper
+    modified = to_wrap(type_str, data)
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\_utils\normalizers.py", line 196, in abi_address_to_hex
+    validate_address(data)
+  File "C:\Users\DELL\Downloads\alpha-evm-dex-bot\venv\Lib\site-packages\web3\_utils\validation.py", line 182, in validate_address
+    raise InvalidAddress(
+web3.exceptions.InvalidAddress: ('Web3.py only accepts checksum addresses. The software that gave you this non-checksum address should be considered unsafe, please file it as a bug on their platform. Try using an ENS name instead. Or, if you must accept lower safety, use Web3.to_checksum_address(lower_case_address).', '0xb2ee8896a65715ec07dfbf5bea080aca43cea8b4')
