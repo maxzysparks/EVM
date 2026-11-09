@@ -1,10 +1,10 @@
 [
 {
-    "ALPHAWALLETPRIVATEKEY": "aes:FbSh6ssRoTmlK8aroOWVMA9RIA6NK9ncp1cBN4OvZooCyhIDkF8dge8rm22apbnUL+ZGqPhSJq4hVCCcrtdKVA==*V4E8bQ1jrBuP9er8GkPNGA==*1RrX60yiGUZ4JXJSp5KTbQ==*g1tEJ51/l1OEFQaO/bKz6w==",
-    "ALPHAWALLETADDRESS": "0xb2EE8896A65715EC07dfBf5bEa080ACA43CeA8b4",
-    "WALLETADDRESS": "0xb2EE8896A65715EC07dfBf5bEa080ACA43CeA8b4",
-    "PRIVATEKEY": "aes:lmPSdkbaVOyhhqHrx4HzVS1jaXew5hzVD+sV/L4BzIoxa8WyMtL4jIPchqDlp4Tda3T+j1C3cx8PXLLe17w/lw==*VXfPFhJNwOeWPkF67j01hQ==*DFCCBA6r3iTDZcG68Uu0bQ==*KL/5JO0YxOhKFwSSo5yrLw==",
-    "WALLETADDRESS2": "no_utility",
+    "ALPHAWALLETPRIVATEKEY": "do not enter it manually",
+    "ALPHAWALLETADDRESS": "0xYourBSCWalletAddressHere",
+    "WALLETADDRESS": "0xYourBSCWalletAddressHere",
+    "PRIVATEKEY": "do not enter it manually",
+    "WALLETADDRESS2": "null",
     "PRIVATEKEY2": "null",
     "WALLETADDRESS3": "null",
     "PRIVATEKEY3": "null",
@@ -25,21 +25,7 @@
     "APPRISE_PARAMETER": "null",
     "START_BUY_AFTER_TIMESTAMP": "false",
     "START_SELL_AFTER_TIMESTAMP": "false",
-    "_EXCHANGE_BASE_SYMBOL": "BNB ",
-    "ENCRYPTPRIVATEKEYS": "true",
-    "_STABLE_BASES": {
-        "USDT": {
-            "address": "0x55d398326f99059ff775485246999027b3197955",
-            "multiplier": 0
-        },
-        "BUSD": {
-            "address": "0xe9e7cea3dedca5984780bafc599bd69add087d56",
-            "multiplier": 0
-        },
-        "USDC": {
-            "address": "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d",
-            "multiplier": 0
-        }
-    }
+    "_EXCHANGE_BASE_SYMBOL": "BNB",
+    "ENCRYPTPRIVATEKEYS": "true"
 }
 ]
