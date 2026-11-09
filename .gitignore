@@ -1,0 +1,53 @@
+# Sensitive configuration
+settings.json
+*.encrypted
+*.key
+*.pem
+
+# Logs
+logs/
+*.log
+exceptions-*.log
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+.venv/
+env/
+ENV/
+.python-version
+
+# IDE / Editor
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Build / Distribution
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Testing
+.coverage
+.pytest_cache/
+.tox/
+
+# Local overrides
+local_settings.json
+.env
+.env.local
